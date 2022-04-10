@@ -11,7 +11,7 @@ const MainPage = () => {
 
   return (
     <>
-      <Button variant="text" onClick={handleOnClick}>
+      <Button variant="text" onClick={handleOnClick} color="primary">
         Calendar
       </Button>
     </>

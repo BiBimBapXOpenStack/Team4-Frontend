@@ -4,12 +4,11 @@ import moment from 'moment';
 import './CalendarBase.css';
 
 const CalendarBase = (props) => {
-  const { onClick, value, onChange } = props;
+  const { value, onChange } = props;
 
   return (
     <Calendar
       value={value}
-      onClickDay={onClick}
       onChange={onChange}
       calendarType="US"
       formatDay={(local, date) => moment(date).format('D')}

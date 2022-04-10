@@ -15,16 +15,10 @@ const CalendarPage = () => {
     console.log(value);
   }, [value]);
 
-  const handleOnClick = (e) => {};
-
   return (
     <div style={style}>
       <div>
-        <CalendarBase
-          onClick={handleOnClick}
-          value={value}
-          onChange={onChange}
-        />
+        <CalendarBase value={value} onChange={onChange} />
       </div>
       <div style={{ textAlign: 'center' }}>
         <div style={{ textAlign: 'center' }}>
