@@ -1,10 +1,12 @@
-import CalendarPage from './pages/CalendarPage';
+import { Route, Routes } from 'react-router-dom';
+import { CalendarPage, MainPage } from './pages';
 
 const App = () => {
   return (
-    <>
-      <CalendarPage />
-    </>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/calendar" element={<CalendarPage />} />
+    </Routes>
   );
 };
 
