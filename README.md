@@ -1,3 +1,6 @@
-### Scheduler Toy Project
+Scheduler Toy Project
 ---
-Create-React-App, React-calendar,...
+### What I use..
+- Create-React-App
+- MUI
+- Redux
