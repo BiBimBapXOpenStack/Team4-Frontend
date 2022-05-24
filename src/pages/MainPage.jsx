@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import {loginState} from '../store/atom';
+import { lightGreen } from '@mui/material/colors';
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [login, setLogin] = useState(false);
+  const login = useRecoilValue(loginState);
 
   const handleOnClick = (e) => {
     //navigate('/calendar/');
     e.preventDefault();
     const innerText = e.target.innerText;
     if(innerText === 'LOGIN'){ // 로그인 버튼 클릭 시 로그인 화면으로 전환
-      navigate('/login/', {state : {success : login}});
+      navigate('/login/');
     }else{
-      setLogin(false);
       alert('로그아웃 되었습니다.');
     }
   };
-
-  useEffect(() =>{
-    console.log(login);
-  },[login]);
 
   const handleWriteClick = () =>{
     console.log('write text');

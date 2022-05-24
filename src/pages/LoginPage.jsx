@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {TextFieldBase} from '../components';
 import Button from '@mui/material/Button';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import {loginState} from '../store/atom';
 
 const LoginPage = () =>{
   const navigate = useNavigate();
@@ -9,10 +11,18 @@ const LoginPage = () =>{
   const { state } = location;
   const [id, setId] = useState('');
   const [pwd, setPwd] = useState('');
+  const login = useRecoilValue(loginState);
+  const setLoginState = useSetRecoilState(loginState)
 
-  useEffect(() =>{
-    console.log(state);
-  },[]);
+  // useEffect(() =>{
+  //   if(!login){
+  //     setLoginState((oldLoginState) => {
+  //       return(
+  //         !oldLoginState
+  //       );
+  //     });
+  //   } // 로그인 성공 시에 사용할 로직
+  // },[]);
 
   const handleChangeId = (e) =>{
     setId(e.target.value);
