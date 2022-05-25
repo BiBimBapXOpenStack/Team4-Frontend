@@ -1,6 +1,6 @@
-Scheduler Toy Project
+Team4-Frontend
 ---
-### What I use..
+### USED
 - Create-React-App
 - MUI
-- Redux
+- recoil
