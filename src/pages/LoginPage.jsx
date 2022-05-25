@@ -8,7 +8,6 @@ import {loginState} from '../store/atom';
 const LoginPage = () =>{
   const navigate = useNavigate();
   const location = useLocation();
-  const { state } = location;
   const [id, setId] = useState('');
   const [pwd, setPwd] = useState('');
   const login = useRecoilValue(loginState);

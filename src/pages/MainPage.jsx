@@ -3,11 +3,16 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import {loginState} from '../store/atom';
-import { lightGreen } from '@mui/material/colors';
+import {GridBase} from '../components';
 
 const MainPage = () => {
   const navigate = useNavigate();
   const login = useRecoilValue(loginState);
+
+  // useEffect(() =>{
+  //    작성된 글이 몇 개가 있는지 받아오는 api, 화면이 열리자마자 실행한다.
+  // },[]);
+
 
   const handleOnClick = (e) => {
     //navigate('/calendar/');
@@ -24,12 +29,16 @@ const MainPage = () => {
     console.log('write text');
   }
 
+  const move2Text = () =>{
+    navigate('/readContent/');
+  }
+
   return (
     <>
       {/*<Button variant="text" onClick={handleOnClick} color="primary">*/}
       {/*  Calendar*/}
       {/*</Button>*/}
-      <div>
+      <div id={'status-field'}>
         {
           login ?
             <Button variant={"text"} onClick={handleWriteClick} color={'primary'}>
@@ -42,8 +51,14 @@ const MainPage = () => {
           {login ? 'logout' : 'login'}
         </Button>
       </div>
-      <div>
-
+      <div id={'main-field'}>
+        {/*<GridBase
+         받아온 내용을 props로 넘김
+        />*/}
+        <GridBase
+          content={[1,2,3,4,5,6]}
+          click={move2Text}
+        />
       </div>
     </>
   );

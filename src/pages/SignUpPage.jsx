@@ -7,7 +7,8 @@ const SignUpPage = () =>{
   const [pwd, setPwd] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState(true);
-  const emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  const emailRegExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$|^$/i;
+  // 빈 문자열 or 이메일 형식 맞는지 확인하는 정규표현식
 
   useEffect(() =>{
     const flag = emailRegExp.test(email);
