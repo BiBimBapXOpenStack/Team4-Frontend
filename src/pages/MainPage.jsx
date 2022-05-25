@@ -26,7 +26,7 @@ const MainPage = () => {
   };
 
   const handleWriteClick = () =>{
-    console.log('write text');
+    navigate('/writeContent/');
   }
 
   const move2Text = () =>{
